@@ -22,17 +22,16 @@
       options = "--delete-older-than 14d";
     };
 
-    channel.enable = false;
   };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelModules = [ "acpi_call" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+
+
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
-  networking.hostName = "nixosbtw"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -47,9 +46,10 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
   console = {
+      enable = true;
   #   font = "Lat2-Terminus16";
-  #   keyMap = "es";
-     useXkbConfig = true; # use xkb.options in tty.
+      keyMap = "es";
+     useXkbConfig = false; # use xkb.options in tty.
    };
 
   # Enable the X11 windowing system.
@@ -59,13 +59,13 @@
   
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "es";
+  # services.xserver.xkb.layout = "es";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.s4yok = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "input" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
@@ -74,7 +74,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
     git
@@ -83,6 +83,15 @@
     pkgs-stbl.unzip
     pkgs-stbl.p7zip
   ];
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  services.flatpak.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
