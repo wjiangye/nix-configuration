@@ -33,9 +33,6 @@
         xwayland-satellite
         xwayland
 
-	swaylock
-	alacritty
-	fuzzel
       ];
     };
 
@@ -78,8 +75,8 @@
 	      installation_mode = "force_installed";
 	    };
 
-	    "{1E6C5B3F-7D4E-4E8F-A9C8-8F8E8E8E8E8E}" = {
-	      install_url = "https://addons.mozilla.org/firefox/downloads/latest/descentraleyes/latest.xpi";
+	    "" = {
+	      install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
 	      installation_mode = "force_installed";
 	    };
 	  };
