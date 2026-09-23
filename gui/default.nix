@@ -1,5 +1,9 @@
 { config, pkgs, ... }: {
 
+    imports = [
+      ./ly.nix
+    ];
+
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
