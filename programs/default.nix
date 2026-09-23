@@ -18,8 +18,6 @@
       slurp
       wl-clipboard
 
-      pkgs-stbl.proton-vpn-cli
-      pkgs-stbl.steam
       pkgs-stbl.yazi
       pkgs-stbl.zathura
 
