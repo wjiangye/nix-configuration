@@ -79,8 +79,14 @@
 	      install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
 	      installation_mode = "force_installed";
 	    };
-	  };
 
+      "addon@darkreader.org" = {
+        install_url =
+"https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+
+        installation_mode = "force_installed";
+	  };
+};
 	  UserPreferences = {
 	    "privacy.globalprivacycontrol.enabled" = true;
 	    "browser.newtabpage.activity-stream.showSponsored" = false;
