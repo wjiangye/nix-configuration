@@ -17,7 +17,7 @@
 
     services = {
       upower.enable = true;
-      power-profile-daemon= true;
+      power-profiles-daemon= true;
       libinput.enable = true;
       fwupd.enable = true;
     };
@@ -25,9 +25,7 @@
     environment.systemPackages = with pkgs; [
       brightnessctl
       proton-vpn-cli
-    ];
-
-    services.flatpak.enable = true;  
+    ]; 
 
     security.polkit.enable = true;
     security.pam.services.swaylock = {};
