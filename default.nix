@@ -1,0 +1,9 @@
+{ ... }: {
+
+  imports = [
+    ./gui
+    ./services
+    ./programs
+  ];
+
+}
